@@ -2,7 +2,7 @@
 Routines for performing N-body sims
 
 # Barnes-Hut
-Octree method
+This is an Octree method
 
 # Particle Mesh
-Discrete Laplacian method
+This is a discrete Laplacian method
