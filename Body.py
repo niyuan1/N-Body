@@ -1,9 +1,7 @@
 #################################################################
-# Name:     body.ry                                             #
+# Name:     Body.py                                             #
 # Authors:  Chris (Yuan Qi) Ni                                  #
 #           Michael Battaglia                                   #
-# Course:   Phy407                                              #
-# Inst.:    Paul Kushner                                        #
 # Date:     December 17, 2016                                   #
 # Function: Program is object definition for a massive body in  #
 #           2D space for N-body simulation.                     #
@@ -12,6 +10,7 @@
 #essential modules
 import numpy as np
 import matplotlib.pyplot as plt
+
 #gravitational force definition
 G = 6.674e-11 #N/m^2/kg^2
 G = 0.449 #kpc^3/[kMs]/[10Myr]^2

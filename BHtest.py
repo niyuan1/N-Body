@@ -2,8 +2,6 @@
 # Name:     BHtest.py                                           #
 # Authors:  Chris (Yuan Qi) Ni                                  #
 #           Michael Battaglia                                   #
-# Course:   Phy407                                              #
-# Inst.:    Paul Kushner                                        #
 # Date:     December 17, 2016                                   #
 # Function: Program test speed and other characteristics of     #
 #           quadtree algorithms computing forces on N bodies    #
@@ -46,7 +44,7 @@ if __name__ == '__main__':
     plt.xlim([-L,L])
     plt.ylim([-L,L])
     plt.show()
-
+    
     #generate Barnes-Hut tree on original grid
     tree = BHTree(Quad(-L,-L,2*L))
     #populate tree with bodies from list
@@ -58,6 +56,10 @@ if __name__ == '__main__':
         tree.applyForce(body, theta, epsilon)
         #take a half time step
         body.leapFrog(dt)
+
+    ############################
+    # Energy Conservation Test #
+    ############################
     
     #test energy conservation over evolution
     t = np.linspace(0,steps*dt,steps)
@@ -95,6 +97,10 @@ if __name__ == '__main__':
     plt.ylabel("Energy [kMs*kpc^2/(10Myr)^2]")
     plt.show()
 
+    #################################
+    # Computational Complexity Test #
+    #################################
+
     #test BH tree construction/traversal speed
     nums = range(1,101)+range(101,1001,10)+range(1001,10000,100)
     timesTree = []
@@ -118,13 +124,25 @@ if __name__ == '__main__':
             tree.applyForce(body, theta, epsilon)
         t_end = clock()
         timesForce.append(t_end - t_start)
-    plt.plot(nums, timesTree)
+    plt.plot(nums, timesTree, label="Tree time")
+    #NlogN time
+    NlnN = nums*np.log(nums)
+    #normalize
+    NlnN = NlnN*(timesTree[-1]/NlnN[-1])
+    plt.plot(nums, NlnN, label="NlogN")
     plt.xlabel("N-bodies")
     plt.ylabel("Tree time")
     plt.title("time to generate Barnes-Hut quadtree")
+    plt.legend()
     plt.show()
-    plt.plot(nums, timesForce)
+    plt.plot(nums, timesForce, label="Force time")
+    #NlogN time
+    NlnN = nums*np.log(nums)
+    #normalize
+    NlnN = NlnN*(timesForce[-1]/NlnN[-1])
+    plt.plot(nums, NlnN, label="NlogN")
     plt.xlabel("N-bodies")
     plt.ylabel("traverse time")
     plt.title("traversing Barnes-Hut quadtree for N bodies")
+    plt.legend()
     plt.show()

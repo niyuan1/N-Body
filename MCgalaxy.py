@@ -2,8 +2,6 @@
 # Name:     MCgalaxy.py                                         #
 # Authors:  Chris (Yuan Qi) Ni                                  #
 #           Michael Battaglia                                   #
-# Course:   Phy407                                              #
-# Inst.:    Paul Kushner                                        #
 # Date:     December 17, 2016                                   #
 # Function: Program generates N randomly distributed bodies     #
 #           according to galactic density distribution and      #

@@ -2,8 +2,6 @@
 # Name:     BHsim.py                                            #
 # Authors:  Chris (Yuan Qi) Ni                                  #
 #           Michael Battaglia                                   #
-# Course:   Phy407                                              #
-# Inst.:    Paul Kushner                                        #
 # Date:     December 17, 2016                                   #
 # Function: Program implements quadtree algorithm for computing #
 #           forces on N bodies interacting under gravity.       #

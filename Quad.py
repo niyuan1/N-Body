@@ -2,8 +2,6 @@
 # Name:     Quad.py                                             #
 # Authors:  Chris (Yuan Qi) Ni                                  #
 #           Michael Battaglia                                   #
-# Course:   Phy407                                              #
-# Inst.:    Paul Kushner                                        #
 # Date:     December 17, 2016                                   #
 # Function: Program is object definition for a quadrant in 2D   #
 #           space for Barnes-Hut/Mesh N-body simulation.        #

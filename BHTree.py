@@ -2,8 +2,6 @@
 # Name:     BHTree.py                                           #
 # Authors:  Chris (Yuan Qi) Ni                                  #
 #           Michael Battaglia                                   #
-# Course:   Phy407                                              #
-# Inst.:    Paul Kushner                                        #
 # Date:     December 17, 2016                                   #
 # Function: Program is object definition for a node in a        #
 #           Barnes-Hut tree for Barnes-Hut N-body simulation.   #
